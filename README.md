@@ -52,4 +52,5 @@ src/
 构建了git分支：login   
 构建了jsconfig,json的文件，方面文件路径   
 将css替换为sass==1.63.6，这里的样式文件绝对路径前面要加~符号   
- 
+## api
+这里为了方便测试和编写登录功能以及后续的一系列功能，使用python的flask框架写了一个粗糙的api来使用，在back_end文件夹的server.python这个文件，然后使用的是mysql数据库，可视化工具是navicat premium15，接口的测试工具为postman
