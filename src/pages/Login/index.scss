@@ -2,7 +2,7 @@
     width: 100vw;
     height: 100vh;
     position: relative;
-    background: url(../../assets/background.jpg);
+    background: url(~assets/background.jpg);
     background-size: cover;
 }
 
@@ -20,10 +20,10 @@
     width: 240px;
     height: 60px;
     display: block;
-    border: 1px solid black;
     margin:0 auto;
     line-height: 60px;
     text-align: center;
     font-size: 25px;
     font-weight: 500;
+    margin-bottom: 20px;
 }
