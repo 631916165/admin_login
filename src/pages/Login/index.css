@@ -1,0 +1,29 @@
+.login {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: url(../../assets/background.jpg);
+    background-size: cover;
+}
+
+.login-container {
+    width: 440px;
+    height: 360px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.3);
+}
+
+.title-login {
+    width: 240px;
+    height: 60px;
+    display: block;
+    border: 1px solid black;
+    margin:0 auto;
+    line-height: 60px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 500;
+}
