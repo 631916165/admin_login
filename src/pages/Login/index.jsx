@@ -1,6 +1,7 @@
 import React,{Component} from "react";
 import { Card, Button, Checkbox, Form, Input } from 'antd';
 import './index.scss'
+import instance from 'utils/Request'
 
 export default class Login extends Component {
     render() {
@@ -70,8 +71,17 @@ export default class Login extends Component {
             </div>
         )
     }
-
-    onFinish = (values) => {
-        console.log(values);
+    
+    onFinish = async (username,password) => {
+        console.log(username,password);
+        const res = await instance({
+            method:'post',
+            url:'/login',
+            data:{
+                username,
+                password
+            }
+        })
+        console.log('res',res);
     }
 }
