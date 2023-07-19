@@ -1,7 +1,15 @@
+/*
+ * @Author: '631916165' '631916165@qq.com'
+ * @Date: 2023-07-19 11:09:26
+ * @LastEditors: '631916165' '631916165@qq.com'
+ * @LastEditTime: 2023-07-19 18:55:43
+ * @FilePath: \admin_login\src\pages\Login\index.jsx
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ */
 import React,{Component} from "react";
-import { Card, Button, Checkbox, Form, Input } from 'antd';
+import { Card, Button, Checkbox, Form, Input,message } from 'antd';
 import './index.scss'
-import instance from 'utils/Request'
+import { login } from "api/User";
 
 export default class Login extends Component {
     render() {
@@ -72,16 +80,20 @@ export default class Login extends Component {
         )
     }
     
-    onFinish = async (username,password) => {
-        console.log(username,password);
-        const res = await instance({
-            method:'post',
-            url:'/login',
-            data:{
-                username,
-                password
-            }
-        })
+    onFinish = async ({username,password}) => {
+        
+        const res = await login(username,password);
         console.log('res',res);
+        if (res.success == true) {
+            // 登录成功
+            // 1.保存token
+            localStorage.setItem('token',res.token)
+            // 2.跳转到管理界面
+            this.props.history.push('./home');
+            message.success('登录成功！')
+            }
+        else {
+            message.error('用户名或密码不正确！')
+        }
     }
 }
