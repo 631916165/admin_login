@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
+import {BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom'
 import Home from './pages/Layout'
 import Login from './pages/Login'
 import Wufa from './pages/Wufa'
@@ -12,6 +12,7 @@ function App() {
 
         {/* 配置路由规则 */}
         <Switch>
+          <Redirect exact from="/" to="/home"></Redirect>
           <Route path="/home" component={Home}></Route>
           <Route path="/login" component={Login}></Route>
           {/* 配置一个404 */}

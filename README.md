@@ -34,3 +34,8 @@ src/
                             Layout/index.jsx   
                             Login/index.jsx   
 3.在App.js里配置路由   
+
+
+### antd组件   
+1.安装：antd==5.7.1   
+注意：这里的引入全局样式的css文件名变为import 'antd/dist/reset.css'   
